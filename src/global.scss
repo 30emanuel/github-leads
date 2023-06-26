@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+  
+
+:root{
+    --color-primary: #44475A;
+    --color-secondary: #8BF6FD;
+    --color-third: #16ABFF;
+    --color-fourth: #50FA7B;
+    --color-erro: #FF0000;
+}
+
+
+*{
+    font-weight: 700;
+    font-family: 'League Spartan';
+}
+
+body{
+    background-color: #282A36;
+}
+
+.App{
+    width: 100%;
+    color: var(--color-primary);
+    padding: 10px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        color: var(--color-secondary);
+        font-size: 64px;
+        line-height: 58.88px;
+    }
+
+    a{
+        color: var(--color-third);
+    }
+
+    button{
+        cursor: pointer;
+    }
+
+}
+
+.modal-erro, .modal-sucess, .modal-warning{
+    width: 60%;
+    max-width: 800px;
+    h2{
+        font-size: 40px;
+        line-height: 36.8px;
+    }
+    .swal2-html-container{
+        font-size: 24px;
+        line-height: 28px;
+    }
+    button{
+        width: 300px;
+        height: 50px;
+    }
+}
+
+.modal-sucess, .modal-warning{
+    h2{
+        color: var(--color-primary);
+    }
+    .swal2-html-container{
+        color: var(--color-third);
+    }
+}
+
+.modal-erro{
+    h2{
+        color: var(--color-erro);
+    }
+    .swal2-html-container{
+        color: var(--color-primary);
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-sucess, .modal-erro, .modal-warning{
+        width: 90%;
+        button{
+            width: 100px;
+        }
+    }
+}

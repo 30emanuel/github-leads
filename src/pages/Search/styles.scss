@@ -1,0 +1,44 @@
+.search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 40px;
+
+    h1{
+        margin-bottom: 20px;
+    }
+
+    h2{
+        color: white;
+        max-width: 700;
+        font-size: 48px;
+    }
+
+    h3{
+        color: white;
+        font-size: 32px;
+    }
+
+    .progress{
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .progress-info{
+        min-height: 50px;
+        margin-top: 100px;
+    }
+
+    span{
+        color: var(--color-secondary);
+    }
+    
+    footer{
+        margin-top: 10%;
+        max-width: 1225px;
+        padding: 50px;
+    }
+}

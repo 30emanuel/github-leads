@@ -1,0 +1,58 @@
+.main{
+    max-width: 1234px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+        color: white;
+        margin-top: 12px;
+        font-size: 24px;
+    }
+    header{
+        text-align: center;
+        h1{
+            text-transform: uppercase;
+            margin-top: 50px;
+        }
+    }
+
+    .container{
+        margin-top: 32px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        p{
+            margin-top: 17px;
+            margin-bottom: 17px;
+            font-size: 16px;
+        }
+
+        .limitRate{
+            margin-top: 10px;
+            min-height: 20px;
+            h3{
+                font-size: 12px;
+                color: #000000;
+            }
+        }
+
+        span{
+            color: var(--color-third);
+        }
+        
+        .key{
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    form{
+        .button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

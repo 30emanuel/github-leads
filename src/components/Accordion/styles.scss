@@ -1,0 +1,23 @@
+.question{
+    margin: 10px 0px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 16px;
+
+    summary{
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .body{
+        margin-top: 20px;
+        border-top: 0.05cm solid #dbdce0;
+        p{
+            margin-top: 20px;
+            line-height: 20px;
+        }
+    }
+
+}
