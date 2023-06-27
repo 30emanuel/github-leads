@@ -75,7 +75,7 @@ export const gerateFile = async (owner, repository, token, setTotalSearches , se
       await Swal.fire({
         icon: 'warning',
         title: 'Aviso',
-        text: `O número de chamadas é ${users.length}, mas a chave possui um limite atual de apenas ${rateLimit}. Você gostaria de buscar essa quantidade de dados mesmo assim?`,
+        text: `O número de chamadas é ${users.length}, mas a chave possui um limite atual de apenas ${rateLimit}. Você gostaria de buscar essa quantidade de dados possíveis?`,
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: 'var(--color-fourth)',
