@@ -35,7 +35,7 @@ export const Main = () =>{
         const owner = parts[1]
         const repository = parts[2]
 
-        if(!formData.repoUrl.includes('github.com/') || owner === '' || repository === '' || formData.key === ''){
+        if(!formData.repoUrl.includes('github.com/') || !owner || !repository || formData.key === ''){
             Swal.fire({
                 icon: 'error',
                 title: 'Erro!',
