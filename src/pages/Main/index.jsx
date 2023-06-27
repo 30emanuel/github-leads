@@ -60,7 +60,7 @@ export const Main = () =>{
                 icon: 'success',
                 title: 'Key valida',
                 confirmButtonText: 'Ok',
-                customClass: 'modal-sucess',
+                customClass: 'modal-success',
                 confirmButtonColor: 'var(--color-fourth)',
             })
         }else{

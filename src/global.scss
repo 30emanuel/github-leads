@@ -62,7 +62,7 @@ body{
 
 .modal-erro, .modal-success, .modal-warning{
     width: 60%;
-    max-width: 800px;
+    max-width: 500px;
     h2{
         font-size: 40px;
         line-height: 36.8px;
@@ -72,8 +72,14 @@ body{
         line-height: 28px;
     }
     button{
-        width: 300px;
+        width: 250px;
         height: 50px;
+    }
+}
+
+.modal-warning{
+    button{
+        width: 200px;
     }
 }
 
@@ -97,9 +103,9 @@ body{
 
 @media (max-width: 600px) {
     .modal-success, .modal-erro, .modal-warning{
-        width: 90%;
+        width: 100%;
         button{
-            width: 100px;
+            width: 200px;
         }
     }
 }
