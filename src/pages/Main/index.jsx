@@ -37,6 +37,7 @@ export const Main = () =>{
 
         if(!formData.repoUrl.includes('github.com/') || owner === '' || repository === '' || formData.key === ''){
             Swal.fire({
+                icon: 'error',
                 title: 'Erro!',
                 text: 'Informe uma url valida',
                 confirmButtonText: 'Ok',
@@ -54,8 +55,17 @@ export const Main = () =>{
         setDisabledButton(!response.isValid)
         setRateLimit(response.rateLimit)
 
-        if(response.isValid === false){
+        if(response.isValid ){
             Swal.fire({
+                icon: 'success',
+                title: 'Key valida',
+                confirmButtonText: 'Ok',
+                customClass: 'modal-sucess',
+                confirmButtonColor: 'var(--color-fourth)',
+            })
+        }else{
+            Swal.fire({
+                icon: 'error',
                 title: 'Erro!',
                 text: 'Informe uma key valida',
                 confirmButtonText: 'Ok',
@@ -76,17 +86,17 @@ export const Main = () =>{
                 <form >
                     <p>Qual repositório deseja pesquisar ?</p>
                     <Input type='text' value={formData.repoUrl} name='repoUrl' onChange={handleInputChange}/>
-                    <p>Sua api-key. Não sabe onde encontrar ? <a>Clique aqui</a></p>
+                    <p>Sua api-key. Não sabe onde encontrar ? <a target="_blank" href="https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/managing-deploy-keys#set-up-deploy-keys" rel="noreferrer">Clique aqui</a></p>
                     <div className="key">
                         <Input type='text' value={formData.key} name='key' onChange={handleInputChange}/>
-                        <Button onClick={handleValidateKey} style='validate' text={'Validar'} disabled={!formData.key.length > 0}/>
+                        <Button infoText={'Informe uma key'} onClick={handleValidateKey} style='validate' text={'Validar'} disabled={!formData.key.length > 0}/>
                     </div>
                     <div className="limitRate">
                         {rateLimit > 0 &&
                         <h3>Voce pode fazer mais <span>{rateLimit}</span> chamadas para essa api-key nessa hora</h3>
                         }
                     </div>
-                    <Button onClick={handleForm} style='submit' disabled={disabledButton} text={'Give Me The Data'}/>
+                    <Button infoText={'Valide sua key'} onClick={handleForm} style='submit' disabled={disabledButton} text={'Give Me The Data'}/>
                 </form>
             </section>
             <Faq/>

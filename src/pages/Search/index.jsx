@@ -21,7 +21,7 @@ export const Search = () => {
         text: 'Os dados foram buscados e formatados com sucesso, clique no botão abaixo para fazer o download da planilha',
         confirmButtonText: 'Download',
         confirmButtonColor: 'var(--color-fourth)',
-        customClass: 'modal-sucess'
+        customClass: 'modal-success'
       }).then((result) => {
         if (result.isConfirmed) {
           const link = document.createElement('a')
@@ -43,7 +43,7 @@ export const Search = () => {
     <div className='search'>
       <header>
         <h1>Por favor, aguarde...</h1>
-        <h3>O tempo de espera dependerá da quantidade de dados buscados, e da disponibilidade da api do github, você pode verificar a integridade da api <a>clicando aqui</a></h3>
+        <h3>O tempo de espera dependerá da quantidade de dados buscados, e da disponibilidade da api do github, você pode verificar a integridade da api <a target='_blank' href='https://www.githubstatus.com' rel="noreferrer">clicando aqui</a></h3>
       </header>
       <div className='progress'>
         <ProgressBar progress={progress}/>
