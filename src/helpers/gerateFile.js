@@ -12,7 +12,7 @@ worksheet.columns = [
   { header: 'Hireable', key: 'hireable', width: 10 },
   { header: 'Blog', key: 'blog', width: 50 },
   { header: 'Company', key: 'company', width: 20 },
-  { header: 'Created At', key: 'createdAt', width: 30 },
+  { header: 'Created At', key: 'created_at', width: 30 },
 ]
 
 export const gerateFile = async (owner, repository, token, setTotalSearches , setIndex , setProgress, setProgressMsg) =>{
@@ -43,7 +43,7 @@ export const gerateFile = async (owner, repository, token, setTotalSearches , se
       }
         
       if (email !== null && name?.length > 0) {
-        await worksheet.addRow({ name, email, location, hireable, blog, company, createdAt: created_at, });
+        await worksheet.addRow({ name, email, location, hireable, blog, company, created_at, });
       }
       setProgress(((index / users.length) * 75) + 25)
     }
