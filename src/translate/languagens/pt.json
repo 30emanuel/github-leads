@@ -1,0 +1,78 @@
+{
+    "main": {
+        "titles": {
+                "title": "Git Leads",
+                "caption": "Consiga leads de desenvolvedores pelo github"
+            },
+        "form":{
+            "repository": "Qual repositório deseja pesquisar ?",
+            "key":{
+                "paragraph": "Sua api-key. Não sabe onde encontrar ?",
+                "link": "Clique aqui"
+            },
+            "buttons": {
+                "validateKey":{
+                    "text": "Validar",
+                    "infoText": "Informe uma key"
+                },
+                "submit":{
+                    "text": "Give Me The Data",
+                    "infoText": "Valide sua key"
+                }
+            }
+        },
+        "rateLimit": {
+            "text": "Você pode fazer mais {{rateLimit}} chamadas para essa api-key nessa hora"
+        },
+        "modals": {
+            "urlInvalid":{
+                "title": "Erro!",
+                "text": "Informe uma url valida"
+            },
+            "keyInvalid": {
+                "title": "Erro!",
+                "text": "Informe uma key valida"
+            },
+            "keyValid":{
+                "title": "Key valida"
+            }
+        }
+    },
+    "search": {
+        "texts":{
+            "title": "Por favor, aguarde...",
+            "caption": "O tempo de espera dependerá da quantidade de dados buscados, e da disponibilidade da api do github, você pode verificar a integridade da api ",
+            "link": "clicando aqui",
+            "progressTo": "de",
+            "footer": "Este processo pode durar até 20 minutos, portanto, pegue um café e relaxe, deixe que fazemos o trabalho duro para você"
+        },
+        "gerateFileMsgs": {
+            "search": "Buscando usersnames...",
+            "collect": "Reunindo informações...",
+            "modals" : {
+                "error":{
+                    "title": "Erro!",
+                    "text": "Repositorio não existe ou key invalida"
+                },
+                "warning":{
+                    "title": "Aviso!",
+                    "text": "O numero de usuarios é de ${users.length} , sua chave, nesta hora, possui o limite de ${rateLimit}. Você gostaria de buscar essa quantidade de dados possíveis?",
+                    "confirm": "Sim",
+                    "cancel": "Não"
+                },
+                "success":{
+                    "title": "Processamento concluído",
+                    "text": "Os dados foram buscados e formatados com sucesso, clique no botão abaixo para fazer o download da planilha"
+                }
+            }
+        }
+    },
+    "faq": { 
+        "questions": [
+            {
+                "title": "Como funciona ?",
+                "response": "Buscamos pelo repositório do github pelas pessoas que curtiram aquele repositório e acompanham, em seguida, mapeamos aqueles usuários que tem o perfil público, e obtemos dados de email, data de criação, nome, etc, utilizando da própia api do github para tal, então, ao final do processo é gerado uma planilha com o consolidado de dados."
+            }
+        ]
+    }
+}

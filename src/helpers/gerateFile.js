@@ -1,6 +1,10 @@
 import axios from "axios"
 import * as Excel from "exceljs";
 import Swal from 'sweetalert2';
+import { i18n } from "../translate/i18n";
+import { messages } from "../translate/languagens";
+
+
 
 const workbook = new Excel.Workbook()
 const worksheet = workbook.addWorksheet('My Sheet')
@@ -15,10 +19,11 @@ worksheet.columns = [
   { header: 'Created At', key: 'created_at', width: 30 },
 ]
 
-export const gerateFile = async (owner, repository, token, setTotalSearches , setIndex , setProgress, setProgressMsg) =>{
+export const gerateFile = async (owner, repository, token, setTotalSearches , setIndex , setProgress, setProgressMsg, messages) =>{
+  console.log(messages)
 
   const fetchUsers = async (users) =>{
-    setProgressMsg('Reunindo informações...')
+    setProgressMsg(messages.collect)
     setTotalSearches(users.length)
     let index = 0
     for (const user of users) {
@@ -56,6 +61,8 @@ export const gerateFile = async (owner, repository, token, setTotalSearches , se
     let users = []
     let rateLimit
     
+    setProgressMsg(messages.search)
+    
     while (response?.data?.length !== 0) {
       response = await axios.get(
           `https://api.github.com/repos/${owner}/${repository}/stargazers?page=${page}&per_page=${per_page}`,
@@ -74,14 +81,14 @@ export const gerateFile = async (owner, repository, token, setTotalSearches , se
     if(users.length > rateLimit){
       await Swal.fire({
         icon: 'warning',
-        title: 'Aviso',
-        text: `O número de chamadas é ${users.length}, mas a chave possui um limite atual de apenas ${rateLimit}. Você gostaria de buscar essa quantidade de dados possíveis?`,
+        title: messages.modals.warning.title,
+        text: messages.modals.warning.text.replace('{users.length}', users.length).replace('{rateLimit}', rateLimit),
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: 'var(--color-fourth)',
         cancelButtonColor: 'var(--color-primary)',
-        confirmButtonText: 'Sim',
-        cancelButtonText: 'Não',
+        confirmButtonText: messages.modals.warning.confirm,
+        cancelButtonText: messages.modals.warning.cancel,
         customClass: 'modal-warning'
       }).then(async (result) => {
         if (result.isConfirmed) {
@@ -102,8 +109,8 @@ export const gerateFile = async (owner, repository, token, setTotalSearches , se
   } catch (error) {
     await Swal.fire({
       icon: 'error',
-      title: 'Erro!',
-      text: 'Repositorio não existe ou key invalida',
+      title: messages.modals.error.title,
+      text: messages.modals.error.text,
       confirmButtonText: 'Ok',
       confirmButtonColor: 'var(--color-primary)',
       customClass: 'modal-erro'

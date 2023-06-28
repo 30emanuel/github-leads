@@ -1,19 +1,12 @@
 import { Accordion } from '../Accordion'
 import './styles.scss'
+import { useTranslation } from 'react-i18next';
+import { i18n } from '../../translate/i18n';
 
 
 export const Faq = () =>{
-    const faqQuestions = [
-        {
-            "title": "Como funciona ?",
-            "response": "Buscamos pelo repositório do github pelas pessoas que curtiram aquele repositório e acompanham, em seguida, mapeamos aqueles usuários que tem o perfil público, e obtemos dados de email, data de criação, nome, etc, utilizando da própia api do github para tal, então, ao final do processo é gerado uma planilha com o consolidado de dados."
-        },
-        {
-            "title": "Tem limite ?",
-            "response": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus fugiat veritatis optio, maxime assumenda quis eligendi illo distinctio sapiente voluptates voluptatibus dolorem ut saepe, ducimus, dolores perspiciatis cum consequatur id?"
-        },
-
-    ]
+    const { t } = useTranslation('faq', {i18n});
+    const faqQuestions = t('questions', { returnObjects: true })
 
     return(
         <section>

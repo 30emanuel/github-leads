@@ -1,0 +1,79 @@
+{
+    "main": {
+        "titles": {
+            "title": "Git Leads",
+            "caption": "Get developer leads from github"
+        },
+        "form":{
+            "repository": "Which repository do you want to search ?",
+            "key":{
+                "paragraph": "Your api-key. Dont know where to find it ?",
+                "link": "Click here"
+            },
+            "buttons": {
+                "validateKey":{
+                    "text": "Validate",
+                    "infoText": "Enter a key"
+                },
+                "submit":{
+                    "text": "Give Me The Data",
+                    "infoText": "Validate your key"
+                }
+            }
+        },
+        "rateLimit": {
+            "text": "You can make more {{rateLimit}} calls to this api-key at this time"
+        },
+        "modals": {
+            "urlInvalid":{
+                "title": "Error!",
+                "text": "Provide a valid url"
+            },
+            "keyInvalid": {
+                "title": "Error!",
+                "text": "Provide a valid key"
+            },
+            "keyValid":{
+                "title": "Valid key"
+            }
+        }
+    },
+    "search": {
+        "texts":{
+            "title": "Please wait...",
+            "caption": "The waiting time will depend on the amount of data fetched, and the availability of the github api, you can check the integrity of the api ",
+            "link": "clicking here",
+            "progressTo": "of",
+            "footer": "This process can take up to 20 minutes, so grab a coffee and relax, let us do the hard work for you."
+        },
+        "gerateFileMsgs": {
+            "search": "Looking for usernames...",
+            "collect": "Gathering information...",
+            "modals" : {
+                "error":{
+                    "title": "Erro!",
+                    "text": "Repository does not exist or invalid key "
+                },
+                "warning":{
+                    "title": "Aviso!",
+                    "text": "The number of users is ${users.length} , your key, at this time, has a limit of ${rateLimit}. Would you like to fetch as much data as possible?",
+                    "confirm": "Yes",
+                    "cancel": "No"
+                },
+                "success":{
+                    "title": "Completed processing",
+                    "text": "The data was successfully retrieved and formatted, click the button below to download the spreadsheet"
+                }
+            }
+        }
+    },
+    "faq": { 
+        "questions": [
+            {
+                "title": "How it works ?",
+                "response": "We search the github repository for the people who liked that repository and follow it, then we map those users who have a public profile, and we obtain email data, creation date, name, etc., using the github api itself for this, then , at the end of the process a spreadsheet is generated with the consolidated data."
+            }
+        ]
+    }
+}
+

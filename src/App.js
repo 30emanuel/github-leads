@@ -1,7 +1,8 @@
 import './global.scss'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {Main} from "./pages/Main";
-import {Search} from "./pages/Search";
+import { Main } from "./pages/Main";
+import { Search } from "./pages/Search";
+
 
 
 function App() {
