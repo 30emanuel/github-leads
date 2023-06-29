@@ -20,7 +20,6 @@ worksheet.columns = [
 ]
 
 export const gerateFile = async (owner, repository, token, setTotalSearches , setIndex , setProgress, setProgressMsg, messages) =>{
-  console.log(messages)
 
   const fetchUsers = async (users) =>{
     setProgressMsg(messages.collect)
@@ -76,6 +75,7 @@ export const gerateFile = async (owner, repository, token, setTotalSearches , se
       rateLimit = response.headers['x-ratelimit-remaining']
       users.push(...response.data)
       page++
+      setProgress((users.length / 10000) * 25)
     }
     setProgress(25)
     if(users.length > rateLimit){

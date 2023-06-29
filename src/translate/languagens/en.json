@@ -22,7 +22,8 @@
             }
         },
         "rateLimit": {
-            "text": "You can make more {{rateLimit}} calls to this api-key at this time"
+            "text1": "You can make mores",
+            "text2": "calls to this api-key at this time"
         },
         "modals": {
             "urlInvalid":{
@@ -52,11 +53,11 @@
             "modals" : {
                 "error":{
                     "title": "Erro!",
-                    "text": "Repository does not exist or invalid key "
+                    "text": "Repository does not exist or your current key is invalid"
                 },
                 "warning":{
-                    "title": "Aviso!",
-                    "text": "The number of users is ${users.length} , your key, at this time, has a limit of ${rateLimit}. Would you like to fetch as much data as possible?",
+                    "title": "Warning!",
+                    "text": "The number of users is {users.length} , your key, at this time, has a limit of {rateLimit}. Would you like to fetch as much data as possible?",
                     "confirm": "Yes",
                     "cancel": "No"
                 },

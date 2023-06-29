@@ -1,0 +1,34 @@
+.language{
+    width: 100px;
+    color: var(--color-primary);
+    .css-1jqq78o-placeholder{
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .css-1xc3v61-indicatorContainer{
+        cursor: pointer;
+        background: none;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+    }
+    .css-1nmdiq5-menu{
+        width: 150px;
+    }
+    input{
+        display: none;
+    }
+    img{
+        width: 30px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    .option{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+}

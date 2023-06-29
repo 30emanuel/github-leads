@@ -8,16 +8,19 @@ import { useTranslation } from 'react-i18next';
 import { i18n } from '../../translate/i18n';
 
 export const Search = () => {
-  const {owner, repository, token} = useParams()
+  const {owner, repository} = useParams()
+  const GITHUB_STORAGE_KEY = 'KEY_GITHUB'
+  const gitKey = localStorage.getItem(GITHUB_STORAGE_KEY)
   const [progress, setProgress] = useState(0)
   const [progressMsg, setProgressMsg] = useState('')
   const [index, setIndex] = useState(0)
   const [totalSearches, setTotalSearches] = useState(0)
   const { t } = useTranslation('search', { i18n })
 
-  const downloadFile = async (owner, repository, token) =>{
+  const downloadFile = async (owner, repository, gitKey) =>{
     const messages = t('gerateFileMsgs', { returnObjects: true })
-    const file = await gerateFile(owner, repository, token, setTotalSearches, setIndex , setProgress, setProgressMsg, messages)
+    const file = await gerateFile(owner, repository, gitKey, setTotalSearches, setIndex , setProgress, setProgressMsg, messages)
+    localStorage.removeItem(GITHUB_STORAGE_KEY)
 
     if(file){
       Swal.fire({
@@ -30,7 +33,7 @@ export const Search = () => {
         if (result.isConfirmed) {
           const link = document.createElement('a')
           link.href = URL.createObjectURL(file)
-          link.download = `${repository}.xlsx`
+          link.download = `${owner}/${repository}.xlsx`
           link.click()
           URL.revokeObjectURL(link.href)
         }
@@ -40,8 +43,8 @@ export const Search = () => {
   }
 
   useEffect(() => {
-    downloadFile(owner, repository, token)
-  }, [owner, repository, token]);
+    downloadFile(owner, repository, gitKey)
+  }, [owner, repository, gitKey]);
   
   return(
     <div className='search'>

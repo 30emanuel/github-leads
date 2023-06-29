@@ -22,7 +22,8 @@
             }
         },
         "rateLimit": {
-            "text": "Você pode fazer mais {{rateLimit}} chamadas para essa api-key nessa hora"
+            "text1": "Você pode fazer mais",
+            "text2": "chamadas para essa api-key nessa hora"
         },
         "modals": {
             "urlInvalid":{
@@ -56,7 +57,7 @@
                 },
                 "warning":{
                     "title": "Aviso!",
-                    "text": "O numero de usuarios é de ${users.length} , sua chave, nesta hora, possui o limite de ${rateLimit}. Você gostaria de buscar essa quantidade de dados possíveis?",
+                    "text": "O numero de usuarios é de {users.length} , sua chave, nesta hora, possui o limite de {rateLimit}. Você gostaria de buscar essa quantidade de dados possíveis?",
                     "confirm": "Sim",
                     "cancel": "Não"
                 },

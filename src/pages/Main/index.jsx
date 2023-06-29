@@ -8,6 +8,7 @@ import { testKey } from "../../helpers/testKey";
 import { Input } from "../../components/Input";
 import { useTranslation } from 'react-i18next';
 import { i18n } from '../../translate/i18n';
+import { LanguageDropdown } from "../../components/LanguageDropdown";
 
 
 export const Main = () =>{
@@ -15,16 +16,11 @@ export const Main = () =>{
         repoUrl: '',
         key: ''
     })
-    const I18N_STORAGE_KEY = 'i18nextLng'
     const [disabledButton, setDisabledButton] = useState(true)
     const [rateLimit, setRateLimit] = useState(0)
-    const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY))
+    const GITHUB_STORAGE_KEY = 'KEY_GITHUB'
+    localStorage.removeItem(GITHUB_STORAGE_KEY)
     const { t } = useTranslation('main', { i18n })
-
-    const handleSelectChange = (event) =>{
-        localStorage.setItem(I18N_STORAGE_KEY, event.target.value)
-        window.location = window.location
-    }
 
     const handleInputChange = (event) => {
         const { name, value } = event.target
@@ -54,7 +50,8 @@ export const Main = () =>{
                 confirmButtonColor: 'var(--color-primary)',
             })
         }else{
-            window.location.assign(`/search/${owner}/${repository}/${formData.key}`)
+            localStorage.setItem(GITHUB_STORAGE_KEY, formData.key)
+            window.location.assign(`/search/${owner}/${repository}`)
         }
     }
 
@@ -86,12 +83,7 @@ export const Main = () =>{
 
     return(
         <div className="main">
-            <div className="language">
-                <select onChange={handleSelectChange} value={language} >
-                    <option value="pt-BR">PT-BR</option>
-                    <option value="en-US">EN</option>
-                </select>
-            </div>
+            <LanguageDropdown/>
             <header>
                 <img src={Logo} alt="Logo" />
                 <h1>{t('titles.title')}</h1>
@@ -114,9 +106,7 @@ export const Main = () =>{
                     </div>
                     <div className="limitRate">
                         {rateLimit > 0 &&
-                        <h3>{t('rateLimit.text', {
-                            rateLimit: rateLimit
-                        })}</h3>
+                        <h3>{t('rateLimit.text1')} <span>{rateLimit}</span> {t('rateLimit.text2')}</h3>
                         }
                     </div>
                     <Button 

@@ -5,6 +5,7 @@
   background-color: white;
 }
 .progress-bar-fill {
+  min-width: 35px;
   height: 100%;
   border-radius: 20px;
   background-color: var(--color-fourth);

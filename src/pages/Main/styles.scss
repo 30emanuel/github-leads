@@ -1,23 +1,6 @@
 .main{
     max-width: 1234px;
-    width: 100%;
-
-    .language{
-        margin-left: 20px;
-        display: flex;
-        select{
-            border: none;
-            border-color: none;
-            background: none;
-            color: white;
-            width: 100px;
-            height: 50px;
-            text-align: center;
-        }
-        option{
-            color: var(--color-primary);
-        }
-    }
+    width: 100%;  
 
     h2{
         color: white;
@@ -50,11 +33,11 @@
             h3{
                 font-size: 12px;
                 color: #000000;
+                span{
+                    color: var(--color-third);
+                    margin: 0px 2px;
+                }
             }
-        }
-
-        span{
-            color: var(--color-third);
         }
         
         .key{
@@ -68,6 +51,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        a{
+            margin-left: 5px;
         }
     }
 }

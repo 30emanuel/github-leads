@@ -9,7 +9,7 @@ export const Faq = () =>{
     const faqQuestions = t('questions', { returnObjects: true })
 
     return(
-        <section>
+        <section className='faq'>
             <h2>FAQ</h2>
             <div className='questions'>
                 {faqQuestions.map((question, i) => (
